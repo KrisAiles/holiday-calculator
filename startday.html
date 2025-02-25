@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LCP Pro-Rata Holiday Calculator</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/index.css">
+        <link rel="icon" type="image/png" href="lcp.png">
+        <script defer src="resources/javascript/index.js"></script>
+        <script defer src="resources/javascript/startday.js"></script>
+    </head>
+    <body>
+        <!-- This is the header section -->
+        <header>
+            <!-- This is the dropdown nav section -->
+            <div id="menu-open"></div>
+            <div id="menu-close"></div>
+            <img src="resources/images/branding_logo.svg" alt="LCP logo">
+        </header>
+        <!-- This is the dropdown nav section -->
+        <nav id="nav-menu">
+            <ul>
+                <a href="index.html"><li id="by-start-month">By Start Month</li></a>
+                <a href="startday.html"><li id="by-start-day">By Start Day</li></a>
+            </ul>
+        </nav>
+        <!-- This is the main section -->
+        <main>
+            <!-- This is for the page heading -->
+            <div id="page-heading">
+                <img src="resources/images/cross.svg" alt="blue cross"><h1>Pro-Rata Holiday Calculator</h1>
+            </div>
+            <!-- This is the form for the inputs for the calculations -->
+            <div id="form-container">
+                <div id="pro-rata-form">
+                    <form id="pro-rata-hours-form">
+                        <label for="name">First Name: </label><br>
+                        <input type="text" id="name" name="name"><br>
+                        <label for="full-time-equiv">Full Time Equivalent Hours: </label><br>
+                        <input type="number" id="full-time-equiv" name="full-time-equiv" min="35" max="40" step="2.5" value="35" required><br>
+                        <label>Contracted Hours: </label><br>
+                        <input type="number" id="part-time-hours" name="part-time-hours" min="0" max="40" step="0.25" value="0" required><br>
+                        <label for="mon-hours">Monday Contracted Hours: </label><br>
+                        <input id="mon-hours" name="mon-hours" type="number" min="0" max="8" step="0.25" value="0"><br>
+                        <label for="tues-hours">Tuesday Contracted Hours: </label><br>
+                        <input id="tues-hours" name="tues-hours" type="number" min="0" max="8" step="0.25" value="0"><br>
+                        <label for="wed-hours">Wednesday Contracted Hours: </label><br>
+                        <input id="wed-hours" name="wed-hours" type="number" min="0" max="8" step="0.25" value="0"><br>
+                        <label for="thurs-hours">Thursday Contracted Hours: </label><br>
+                        <input id="thurs-hours" name="thurs-hours" type="number" min="0" max="8" step="0.25" value="0"><br>
+                        <label for="fri-hours">Friday Contracted Hours: </label><br>
+                        <input id="fri-hours" name="fri-hours" type="number" min="0" max="8" step="0.25" value="0"><br>
+                        <label for="start-day">Start Day: </label><br>
+                        <input id="start-day" name="start-day" type="number" min="1" max="31" step="1" value="1">
+                        <label for="">Start Month: </label><br>
+                        <select id="start-month" name="start-month" required>
+                            <option value="">--Select start month--</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                        </select><br>
+                        <input id="submit" type="submit" value="Submit">
+                    </form>
+                </div> 
+                <!-- This is to display the output from the form -->   
+                <div id="pro-rata-form-output">
+                    <p id="form-output">Fill in the form to calculate pro-rata holiday entitlement.</p>                    
+                </div>
+                <button id="copy">Copy</button>
+            </div>
+        </main>
+        <!-- This is the footer section -->
+        <footer>
+
+        </footer>
+        <!-- This is to hide and display the back to the top button -->
+        <div id="back-to-top"></div>
+    </body>
+</html>

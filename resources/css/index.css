@@ -1,0 +1,233 @@
+@import url("desktopstyle.css");
+@import url("mobilestyle.css");
+
+/* -------------------- UNIVERSAL STYLING --------------------*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(246, 244, 241);
+}
+
+h1 {
+    font-weight: 700;
+    margin: 0;
+}
+
+/* -------------------- HEADER STYLING --------------------*/
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(246, 244, 241);
+    margin: 0;
+    padding: 0;
+    z-index: 999;
+    width: 100%;
+    height: 89px;
+    box-sizing: border-box;
+}
+
+#menu-open {
+    display: block;
+    width: 50px;
+    height: 89px;
+    background-image: url(../images/bluemenuopen.png);
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+}
+
+#menu-open:hover {
+    background-image: url(../images/whitemenuopen.png);
+    background-size: contain;
+    background-position: center;
+}
+
+#menu-close {
+    display: none;
+    width: 50px;
+    height: 89px;
+    background-image: url(../images/bluemenuclose.png);
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+}
+
+#menu-close:hover {
+    background-image: url(../images/whitemenuclose.png);
+    background-size: contain;
+    background-position: center;
+}
+
+header img {
+    height: 45px;
+    padding: 22px;
+}
+
+/* -------------------- NAV STYLING --------------------*/
+#nav-menu {
+    animation: 0.3s ease-in forwards nav-slide-in;
+    display: none;
+    position: fixed;
+    top: 105px;
+    left: 0;
+    width: 250px;
+    background-color: rgb(246, 244, 241);
+    z-index: 998;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 25px 0;
+    
+}
+
+nav ul li {
+    padding: 10px 25px;
+    font-weight: 500;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: rgb(0, 163, 199);
+}
+
+@keyframes nav-slide-in {
+    from {
+        transform: translateX(-250px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* -------------------- MAIN STYLING --------------------*/
+main {
+    background-color: rgb(246, 244, 241);
+    margin: 89px 0 0 0;
+    padding: 50px 0;
+}
+
+#page-heading {
+    position: relative;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#page-heading img {
+    position: absolute;
+}
+
+/* -------------------- FORM STYLING --------------------*/
+input {
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1.5px solid lightgray;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    font-size: 18px;
+    color: white;
+    background-color: rgb(0, 163, 199);
+    border-radius: 50px;
+    padding: 10px;
+    width: 100px;
+    border: 1.5px solid rgb(0, 163, 199);
+    margin: 0 0 10px 0;
+}
+
+select {
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    appearance: none;
+    font: inherit;
+    border: 1.5px solid lightgray;
+    border-radius: 10px;
+    background-image: url(../images/pngegg.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    background-size: 32px;
+}
+
+#form-container {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 auto 50px auto;
+    border-radius: 10px;
+}
+
+#pro-rata-form {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+#pro-rata-form-output {
+    text-align: left;
+    border: 1.5px solid lightgray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#copy {
+    font-size: 18px;
+    color: white;
+    background-color: rgb(0, 163, 199);
+    border-radius: 50px;
+    padding: 10px;
+    width: 100px;
+    border: 1.5px solid rgb(0, 163, 199);
+}
+
+/* -------------------- FOOTER STYLING --------------------*/
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(20, 30, 52);
+}
+
+/* -------------------- BACK TO TOP STYLING --------------------*/
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 997;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/top.png);
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+#back-to-top:hover {
+    background-image: url(../images/tophover.png);
+    opacity: 1;
+} 

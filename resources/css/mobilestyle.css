@@ -1,0 +1,22 @@
+/* MOBILE SPECIFIC STYLES */
+@media only screen and (max-width: 800px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    #page-heading {
+        width: 275px;
+    }
+
+    #page-heading img {
+        width: 35px;
+        top: -29px;
+        left: -33px;
+    }
+
+    #form-container {
+        width: 300px;
+        padding: 10px;
+    }
+}
