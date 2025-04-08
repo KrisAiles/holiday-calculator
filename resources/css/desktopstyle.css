@@ -2,21 +2,21 @@
 @media only screen and (min-width: 801px) {
     
     h1 {
-        font-size: 52px;
+        font-size: 3.25rem;
     }
 
     #page-heading {
-        width: 690px;
+        width: 43.125rem;
     }
 
     #page-heading img {
-        width: 40px;
-        top: -26px;
-        left: -36px;
+        width: 2.5rem;
+        top: -1.625rem;
+        left: -2.25rem;
     }
 
     #form-container {
-        width: 500px;
-        padding: 50px;
+        width: 31.25rem;
+        padding: 3.125rem;
     }
 }

@@ -2,21 +2,21 @@
 @media only screen and (max-width: 800px) {
 
     h1 {
-        font-size: 34px;
+        font-size: 2.125rem;
     }
 
     #page-heading {
-        width: 275px;
+        width: 17.1875rem;
     }
 
     #page-heading img {
-        width: 35px;
-        top: -29px;
-        left: -33px;
+        width: 2.1875rem;
+        top: -1.8125rem;
+        left: -2.0625rem;
     }
 
     #form-container {
-        width: 300px;
-        padding: 10px;
+        width: 18.75rem;
+        padding: 0.625rem;
     }
 }
