@@ -2,9 +2,17 @@
 @import url("mobilestyle.css");
 
 /* -------------------- UNIVERSAL STYLING --------------------*/
+* {
+    box-sizing: content-box;
+}
+
+html {
+    font-size: 16px;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
