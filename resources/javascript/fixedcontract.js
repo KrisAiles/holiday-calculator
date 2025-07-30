@@ -181,14 +181,20 @@ proRataHoursForm.addEventListener("submit", (e) => {
         default:
             alert('Please enter a valid date');
     };
+    // Contract duration input
+    const inputDuration = Number(document.getElementById("duration").value);//-----------------------------------------------------------------------------------<< input contract duration
+    if ((12 - monthNumber) + inputDuration > 12) {
+        return alert('Contract length can not be longer than the current holiday year.');
+    };
     // array to hold output values each time calculateHolidayEntitlement function is called
     const ptHolEntArray = [];
     async function calculateHolidayEntitlement(startMonth) {
         // API call to get bank holiday dates
         await getBankHols(bankHolsYear);
+        console.log('it has finished');
         // calculates full time holiday entitlement based on what month of the financial year you start or your hours change
-        const ftHolEnt = (((hpw * 52) / 10) / 12) * startMonth;
-        const ftHolEntTrunc = Math.trunc((((hpw * 52) / 10) / 12) * startMonth);
+        const ftHolEnt = (((hpw * 52) / 10) / 12) * inputDuration;
+        const ftHolEntTrunc = Math.trunc((((hpw * 52) / 10) / 12) * inputDuration);
         let ftHolEntProRata;
         if (ftHolEnt - ftHolEntTrunc > 0 && ftHolEnt - ftHolEntTrunc <= 0.5) {
             ftHolEntProRata = ftHolEntTrunc + 0.5;
@@ -206,7 +212,7 @@ proRataHoursForm.addEventListener("submit", (e) => {
         let wednesdayBankHol = 0;
         let thursdayBankHol = 0; 
         let fridayBankHol = 0;
-        for (let i = bankHolsArray.length - startMonth; i < bankHolsArray.length; i++) {
+        for (let i = bankHolsArray.length - startMonth; i < (12 - startMonth) + inputDuration; i++) {
             ftBankHolEnt += bankHolsArray[i].length;
             for (let j = 0; j < bankHolsArray[i].length; j++) {
                 let day = (new Date(bankHolsArray[i][j])).getDay();
@@ -259,7 +265,8 @@ proRataHoursForm.addEventListener("submit", (e) => {
         } else {
             ptHolEnt = ptHolEntBalanceTrunc;
         };
-        // pus output value to array
+        // push output value to array
+        console.log(ptHolEnt);
         ptHolEntArray.push(ptHolEnt);
     };
 
@@ -267,16 +274,17 @@ proRataHoursForm.addEventListener("submit", (e) => {
         // call the function based on the start month input
         await calculateHolidayEntitlement(monthNumber);
         // call the function with the full 12 months
-        await calculateHolidayEntitlement(12);
+        //await calculateHolidayEntitlement(12);
         // display the output on the screen
         const formOutput = document.getElementById("form-output");
-        formOutput.textContent = `${employeeName} is working ${ptHpw} hours per week; ${workingDays}. The ${ptHolEntArray[0]} hours of current leave include the bank holiday adjustment. The ${ptHolEntArray[1]} hours total leave include the bank holiday adjustment.`;
+        formOutput.textContent = `${employeeName} is working ${ptHpw} hours per week; ${workingDays}. The ${ptHolEntArray[0]} hours of current leave include the bank holiday adjustment.`; // The ${ptHolEntArray[1]} hours total leave include the bank holiday adjustment.
         // click a button to copy the output to clipboard
         const copyButton = document.getElementById("copy");
         copyButton.addEventListener("click", (e) => {
             e.preventDefault;
-            navigator.clipboard.writeText(`${employeeName} is working ${ptHpw} hours per week; ${workingDays}. The ${ptHolEntArray[0]} hours of current leave include the bank holiday adjustment. The ${ptHolEntArray[1]} hours total leave include the bank holiday adjustment.`);
-        });
-    }
+            navigator.clipboard.writeText(`${employeeName} is working ${ptHpw} hours per week; ${workingDays}. The ${ptHolEntArray[0]} hours of current leave include the bank holiday adjustment.`); // The ${ptHolEntArray[1]} hours total leave include the bank holiday adjustment.
+        });        
+    }  
+
     callCalculateHolidayEntitlement();
 });

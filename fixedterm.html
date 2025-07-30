@@ -7,20 +7,20 @@
         <link rel="stylesheet" type="text/css" href="resources/css/index.css">
         <link rel="icon" type="image/png" href="lcp.png">
         <script defer src="resources/javascript/index.js"></script>
-        <script defer src="resources/javascript/startday.js"></script>
+        <script defer src="resources/javascript/fixedcontract.js"></script>
     </head>
     <body>
         <!-- This is the header section -->
         <header>
-            <!-- This is the dropdown nav section -->
+            <!-- This is to toggle open and close for the dropdown nav menu -->
             <div id="menu-open"></div>
             <div id="menu-close"></div>
         </header>
         <!-- This is the dropdown nav section -->
         <nav id="nav-menu">
             <ul>
-                <a href="index.html"><li id="by-start-month">By Start Month</li></a>
-                <a href="startday.html"><li id="by-start-day">By Start Day</li></a>
+                <li id="by-start-month"><a href="index.html">By Start Month</a></li>
+                <li id="by-start-day"><a href="startday.html" target="_self">By Start Day</a></li>
                 <li id="by-start-day"><a href="fixedterm.html" target="_self">Fixed Term Contract</a></li>
             </ul>
         </nav>
@@ -56,8 +56,6 @@
                         <input id="thurs-hours" name="thurs-hours" type="number" min="0" max="8" step="0.25" value="0"><br>
                         <label for="fri-hours">Friday Contracted Hours: </label><br>
                         <input id="fri-hours" name="fri-hours" type="number" min="0" max="8" step="0.25" value="0"><br>
-                        <label for="start-day">Start Day: </label><br>
-                        <input id="start-day" name="start-day" type="number" min="1" max="31" step="1" value="1">
                         <label for="">Start Month: </label><br>
                         <select id="start-month" name="start-month" required>
                             <option value="">--Select start month--</option>
@@ -74,12 +72,28 @@
                             <option value="July">July</option>
                             <option value="August">August</option>
                         </select><br>
+                        <label for="">Contract Duration: </label>
+                        <select id="duration" name="duration" required>
+                            <option value="">--Select contract duration--</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                            <option value=6>6</option>
+                            <option value=7>7</option>
+                            <option value=8>8</option>
+                            <option value=9>9</option>
+                            <option value=10>10</option>
+                            <option value=11>11</option>
+                            <option value=12>12</option>
+                        </select><br>
                         <input id="submit" type="submit" value="Submit">
                     </form>
-                </div> 
-                <!-- This is to display the output from the form -->   
+                </div>    
+                <!-- This is to display the output from the form -->        
                 <div id="pro-rata-form-output">
-                    <p id="form-output">Fill in the form to calculate pro-rata holiday entitlement.</p>                    
+                    <p id="form-output">Fill in the form to calculate pro-rata holiday entitlement.</p>                                      
                 </div>
                 <button id="copy">Copy</button>
             </div>

@@ -21,6 +21,7 @@
             <ul>
                 <li id="by-start-month"><a href="index.html">By Start Month</a></li>
                 <li id="by-start-day"><a href="startday.html" target="_self">By Start Day</a></li>
+                <li id="by-start-day"><a href="fixedterm.html" target="_self">Fixed Term Contract</a></li>
             </ul>
         </nav>
         <!-- This is the main section -->
@@ -33,6 +34,12 @@
             <div id="form-container">
                 <div id="pro-rata-form">
                     <form id="pro-rata-hours-form">
+                        <label for="">Holiday Year: </label>
+                        <select id="year" name="year" required>
+                            <option value="">--Select holiday year--</option>
+                            <option id="current" value='current'></option>
+                            <option id="next" value='next'></option>
+                        </select><br>
                         <label for="name">First Name: </label><br>
                         <input type="text" id="name" name="name"><br>
                         <label for="full-time-equiv">Full Time Equivalent Hours: </label><br>
