@@ -33,13 +33,9 @@ async function getBankHols(year) {
     if (year === 'current') {
         yearPartOne = currentPartOne;
         yearPartTwo = currentPartTwo;
-        console.log(yearPartOne);
-        console.log(yearPartTwo);
     } else if (year === 'next') {
         yearPartOne = nextPartOne;
         yearPartTwo = nextPartTwo;
-        console.log(yearPartOne);
-        console.log(yearPartTwo);
     } else {
         return alert('Please select current year.');
     }
@@ -87,7 +83,6 @@ async function getBankHols(year) {
         }
     }
     bankHolsArray.push(sep, oct, nov, dec, jan, feb, mar, apr, may, jun, jul, aug);
-    console.log(bankHolsArray);
 }
 
 const proRataHoursForm = document.getElementById("pro-rata-hours-form");
@@ -191,7 +186,6 @@ proRataHoursForm.addEventListener("submit", (e) => {
     async function calculateHolidayEntitlement(startMonth) {
         // API call to get bank holiday dates
         await getBankHols(bankHolsYear);
-        console.log('it has finished');
         // calculates full time holiday entitlement based on what month of the financial year you start or your hours change
         const ftHolEnt = (((hpw * 52) / 10) / 12) * inputDuration;
         const ftHolEntTrunc = Math.trunc((((hpw * 52) / 10) / 12) * inputDuration);
@@ -266,7 +260,6 @@ proRataHoursForm.addEventListener("submit", (e) => {
             ptHolEnt = ptHolEntBalanceTrunc;
         };
         // push output value to array
-        console.log(ptHolEnt);
         ptHolEntArray.push(ptHolEnt);
     };
 

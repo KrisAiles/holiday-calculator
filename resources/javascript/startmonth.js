@@ -33,13 +33,9 @@ async function getBankHols(year) {
     if (year === 'current') {
         yearPartOne = currentPartOne;
         yearPartTwo = currentPartTwo;
-        console.log(yearPartOne);
-        console.log(yearPartTwo);
     } else if (year === 'next') {
         yearPartOne = nextPartOne;
         yearPartTwo = nextPartTwo;
-        console.log(yearPartOne);
-        console.log(yearPartTwo);
     } else {
         return alert('Please select current year.');
     }
@@ -87,7 +83,6 @@ async function getBankHols(year) {
         }
     }
     bankHolsArray.push(sep, oct, nov, dec, jan, feb, mar, apr, may, jun, jul, aug);
-    console.log(bankHolsArray);
 }
 
 const proRataHoursForm = document.getElementById("pro-rata-hours-form");
